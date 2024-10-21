@@ -1,0 +1,28 @@
+<bikelist>
+    <h3>Bike List</h3>
+    <table style="width:80%" border="1"
+           class = "table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Engine</th>
+            <th>Year</th>
+            <th>Torque</th>
+            <th>Power</th>
+            <th>Displacement</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="bike:${bikelist}">
+            <td th:text="${bike.make}"></td>
+            <td th:text="${bike.model}"></td>
+            <td th:text="${bike.engine}"></td>
+            <td th:text="${bike.year}"></td>
+            <td th:text="${bike.torque}"></td>
+            <td th:text="${bike.power}"></td>
+            <td th:text="${bike.displacement}"></td>
+        </tr>
+        </tbody>
+    </table>
+</bikelist>

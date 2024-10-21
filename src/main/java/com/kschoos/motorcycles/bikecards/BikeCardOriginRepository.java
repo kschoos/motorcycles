@@ -27,12 +27,28 @@ public class BikeCardOriginRepository implements BikeCardRepository {
     private WebClient.Builder webClientBuilder;
 
     @Override
-    public Mono<List<BikeCard>> getBikeCards() {
+    public Mono<List<BikeCard>> getBikeCards(BikeCardFilter filter) {
         ObjectMapper objectMapper = new ObjectMapper();
         WebClient webClient = webClientBuilder.build();
 
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(this.motorcycleAPI_URI);
+
+        stringBuilder.append("?");
+
+        System.out.println(filter);
+
+        if (!filter.makes.isEmpty()) {
+            stringBuilder.append("make=");
+            stringBuilder.append(filter.makes.get(0));
+        }
+
+        System.out.println(filter);
+
+        System.out.println(stringBuilder.toString());
+
         return webClient.get()
-                .uri(this.motorcycleAPI_URI)
+                .uri(stringBuilder.toString())
                 .header("X-Api-Key", this.motorcycleAPI_KEY)
                 .retrieve()
                 .bodyToMono(String.class)

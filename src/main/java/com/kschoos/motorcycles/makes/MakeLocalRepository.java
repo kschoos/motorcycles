@@ -1,10 +1,9 @@
-package com.kschoos.motorcycles.bikecards;
+package com.kschoos.motorcycles.makes;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.kschoos.motorcycles.bikecards.BikeCard;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
@@ -15,24 +14,24 @@ import java.io.InputStream;
 import java.util.List;
 
 @Component
-public class BikeCardLocalRepository implements BikeCardRepository {
-    @Value("classpath:bikes.json")
-    String motorcycleAPI_URI;
+public class MakeLocalRepository implements MakeRepository {
+    @Value("classpath:makes.json")
+    private String repositoryURI;
 
-    private final ResourceLoader resourceLoader;
+    ResourceLoader resourceLoader;
 
-    public BikeCardLocalRepository(ResourceLoader resourceLoader) {
+    public MakeLocalRepository(ResourceLoader resourceLoader) {
         this.resourceLoader = resourceLoader;
     }
 
+
     @Override
-    @Primary
-    public Mono<List<BikeCard>> getBikeCards(BikeCardFilter filter) {
+    public Mono<List<Make>> getMakes() {
         ObjectMapper objectMapper = new ObjectMapper();
         InputStream inputStream;
 
         try {
-            Resource resource = this.resourceLoader.getResource(this.motorcycleAPI_URI);
+            Resource resource = this.resourceLoader.getResource(this.repositoryURI);
             inputStream = resource.getInputStream();
         } catch (IOException e) {
             System.out.println("Could not read from resource...");
@@ -44,14 +43,14 @@ public class BikeCardLocalRepository implements BikeCardRepository {
             return null;
         }
 
-        List<BikeCard> bikeCards;
+        List<Make> makeNames;
         try {
-            bikeCards = objectMapper.readValue(inputStream, new TypeReference<List<BikeCard>>() {});
+            makeNames = objectMapper.readValue(inputStream, new TypeReference<List<Make>>() {});
         } catch (IOException e) {
             e.printStackTrace();
-            bikeCards = null;
+            makeNames = null;
         }
 
-        return Mono.just(bikeCards);
+        return Mono.just(makeNames);
     }
 }

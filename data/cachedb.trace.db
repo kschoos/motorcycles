@@ -1,0 +1,21 @@
+2024-10-20 17:44:21.332385+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select bc1_0.id,bc1_0.displacement,bc1_0.engine,bc1_0.make,bc1_0.model,bc1_0.power,bc1_0.torque,bc1_0.[*]year from bike_card bc1_0 where bc1_0.make=?"; expected "identifier"; SQL statement:
+select bc1_0.id,bc1_0.displacement,bc1_0.engine,bc1_0.make,bc1_0.model,bc1_0.power,bc1_0.torque,bc1_0.year from bike_card bc1_0 where bc1_0.make=? [42001-224]
+2024-10-20 17:47:41.595826+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select bc1_0.id,bc1_0.displacement,bc1_0.engine,bc1_0.make,bc1_0.model,bc1_0.power,bc1_0.torque,bc1_0.[*]year from bike_card bc1_0 where bc1_0.make=?"; expected "identifier"; SQL statement:
+select bc1_0.id,bc1_0.displacement,bc1_0.engine,bc1_0.make,bc1_0.model,bc1_0.power,bc1_0.torque,bc1_0.year from bike_card bc1_0 where bc1_0.make=? [42001-224]
+2024-10-20 17:50:21.652799+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BIKE_CARD" not found (this database is empty); SQL statement:
+select bc1_0.id,bc1_0.displacement,bc1_0.engine,bc1_0.make,bc1_0.model,bc1_0.power,bc1_0.torque,bc1_0.yr from bike_card bc1_0 where bc1_0.make=? [42104-224]
+2024-10-20 17:51:33.234350+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BIKE_CARD" not found (this database is empty); SQL statement:
+select bc1_0.id,bc1_0.displacement,bc1_0.engine,bc1_0.make,bc1_0.model,bc1_0.power,bc1_0.torque,bc1_0."year" from bike_card bc1_0 where bc1_0.make=? [42104-224]
+2024-10-20 17:55:31.374822+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select bc1_0.id,bc1_0.displacement,bc1_0.engine,bc1_0.make,bc1_0.model,bc1_0.power,bc1_0.torque,bc1_0.[*]year from bike_card bc1_0 where bc1_0.make=?"; expected "identifier"; SQL statement:
+select bc1_0.id,bc1_0.displacement,bc1_0.engine,bc1_0.make,bc1_0.model,bc1_0.power,bc1_0.torque,bc1_0.year from bike_card bc1_0 where bc1_0.make=? [42001-224]
+2024-10-20 17:58:56.049034+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BIKE_CARD" not found (this database is empty); SQL statement:
+select bc1_0.id,bc1_0.displacement,bc1_0.engine,bc1_0.make,bc1_0.model,bc1_0.power,bc1_0.torque,bc1_0.yuri from bike_card bc1_0 where bc1_0.make=? [42104-224]
+2024-10-20 17:59:59.745880+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BIKE_CARD" not found (this database is empty); SQL statement:
+select bc1_0.id,bc1_0.displacement,bc1_0.engine,bc1_0.make,bc1_0.model,bc1_0.power,bc1_0.torque,bc1_0.yuri from bike_card bc1_0 where bc1_0.make=? [42104-224]
